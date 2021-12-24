@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1020780718778",
+    "project_id": "testnearmaickshopping",
+    "storage_bucket": "testnearmaickshopping.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020780718778:android:a85d778a74d8fe8f33b083",
+        "android_client_info": {
+          "package_name": "com.myshopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020780718778-hb8q2meu5pl1dpt6h4hf9e2mm76ufvt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdCMGzvo61NsC9B33N44Z0MRHF9HnsSFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020780718778-hb8q2meu5pl1dpt6h4hf9e2mm76ufvt5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
