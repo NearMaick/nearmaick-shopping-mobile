@@ -3,6 +3,8 @@ import React from 'react';
 import { ButtonIcon } from '../ButtonIcon';
 import { Container, Info, Title, Quantity, Options } from './styles';
 
+import firestore from '@react-native-firebase/firestore';
+
 export type ProductProps = {
   id: string;
   description: string;
@@ -15,6 +17,13 @@ type Props = {
 }
 
 export function Product({ data }: Props) {
+  async function handleDelete() {
+    firestore()
+    .collection('products')
+    .doc(data.id)
+    .delete();
+  }
+
   return (
     <Container>
       <Info>
@@ -35,6 +44,7 @@ export function Product({ data }: Props) {
         <ButtonIcon
           icon="delete"
           color="alert"
+          onPress={handleDelete}
         />
       </Options>
     </Container>
