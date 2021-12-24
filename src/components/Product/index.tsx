@@ -17,6 +17,15 @@ type Props = {
 }
 
 export function Product({ data }: Props) {
+  async function handleToggleDone() {
+    firestore()
+    .collection('products')
+    .doc(data.id)
+    .update({
+      done: !data.done
+    })
+  }
+
   async function handleDelete() {
     firestore()
     .collection('products')
@@ -39,6 +48,7 @@ export function Product({ data }: Props) {
       <Options>
         <ButtonIcon
           icon={data.done ? "undo" : "check"}
+          onPress={handleToggleDone}
         />
 
         <ButtonIcon
