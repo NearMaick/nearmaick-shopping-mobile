@@ -43,7 +43,11 @@ export function Upload() {
       setBytesTransferred(`${taskSnapshot.bytesTransferred} transferido de ${taskSnapshot.totalBytes}`)
     })
 
-    uploadTask.then(() => Alert.alert('Upload concluído!'))
+    uploadTask.then(async () => {
+      const imageUrl = await reference.getDownloadURL()
+      console.log(imageUrl)
+      Alert.alert('Upload concluído!')
+    })
   }
 
   return (
