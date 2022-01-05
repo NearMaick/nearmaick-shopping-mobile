@@ -34,9 +34,15 @@ export function SignIn() {
     })
   }
 
-  async function handleSignWithEmailAndPassword() {
-    const { user } = await auth().signInWithEmailAndPassword(email, password)
-    console.log(user)
+  function handleSignWithEmailAndPassword() {
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(({ user }) => console.log(user))
+      .catch(error => {
+        console.log(error.code)
+        if(error.code === 'auth/user-not-found' || 'auth/wrong-password') {
+          Alert.alert('Usuário/senha não correspondem.')        }
+      })
   }
 
   return (
