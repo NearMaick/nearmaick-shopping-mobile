@@ -19,6 +19,19 @@ export function SignIn() {
   function handleCreateUserAccount() {
     auth().createUserWithEmailAndPassword(email, password)
     .then(() => Alert.alert('Usuário criado com sucesso.'))
+    .catch(error => {
+      if (error.code === 'auth/email-already-in-use') {
+        Alert.alert('Este e-mail não está disponível.')
+      }
+
+      if (error.code === 'auth/invalid-email') {
+        Alert.alert('E-mail inválido.')
+      }
+
+      if (error.code === 'auth/weak-password') {
+        Alert.alert('A senha deve ter pelo menos 6 dígitos')
+      }
+    })
   }
 
   return (
